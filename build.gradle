@@ -5,25 +5,14 @@ plugins {
 group = "ru.netology"
 version = "1.0-SNAPSHOT"
 
-java {
-    sourceCompatibility = 11
-}
-
-compileJava.options.encoding = "UTF-8"
-compileTestJava.options.encoding = "UTD-8"
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation("junit:junit:4.13")
+    testImplementation("org.testng:testng:7.1.0")
 }
 
-test {
-    useJUnit()
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
+tasks.test {
+    useTestNG()
 }
